@@ -56,7 +56,7 @@ body {
 .save-button {
   position: absolute;
   top: 25px;
-  right: 25px;
+  right: 100px;
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
@@ -129,4 +129,20 @@ form button {
   background-color: #cdffcd;
   color: green;
   border: 2px solid green;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightpink;
+  user-select: none;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: lightcoral;
+  color: white;
 }
