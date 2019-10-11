@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const MovieUpdateForm = props => {
-  const id = props.match.params.id;
+const MovieAddForm = props => {
   const [movieState, setMovieState] = useState({
     title: "",
     director: "",
@@ -10,21 +9,6 @@ const MovieUpdateForm = props => {
     stars: ""
   });
   const [messages, setMessages] = useState({ message: null, errors: null });
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/movies/${id}`)
-      .then(res => {
-        setMovieState({
-          ...movieState,
-          title: res.data.title,
-          director: res.data.director,
-          metascore: res.data.metascore,
-          stars: res.data.stars
-        });
-      })
-      .catch(err => setMessages({ ...messages, errors: err }));
-  }, []);
 
   const handleChange = e => {
     e.target.name === "stars"
@@ -42,8 +26,8 @@ const MovieUpdateForm = props => {
     movieState.stars === ""
       ? setMessages({ ...messages, errors: "Please complete all fields..." })
       : axios
-          .put(`http://localhost:5000/api/movies/${id}`, {
-            id: id,
+          .post(`http://localhost:5000/api/movies/`, {
+            id: new Date().getTime(),
             title: movieState.title,
             director: movieState.director,
             metascore: movieState.metascore,
@@ -65,6 +49,7 @@ const MovieUpdateForm = props => {
 
   return (
     <form action="">
+      <h4>Add Movie:</h4>
       <input
         type="text"
         name="title"
@@ -93,7 +78,7 @@ const MovieUpdateForm = props => {
         placeholder="Enter stars (comma separated)..."
         onChange={handleChange}
       />
-      <button onClick={handleSubmit}>Submit Changes!</button>
+      <button onClick={handleSubmit}>Add Movie +</button>
       {messages.message && (
         <div className="message stat">{messages.message}</div>
       )}
@@ -102,4 +87,4 @@ const MovieUpdateForm = props => {
   );
 };
 
-export default MovieUpdateForm;
+export default MovieAddForm;
