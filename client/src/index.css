@@ -176,3 +176,7 @@ form button {
   position: relative;
   left: calc(50% - 75px);
 }
+
+form h4 {
+  margin-top: 0;
+}
