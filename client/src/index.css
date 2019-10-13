@@ -56,7 +56,7 @@ body {
 .save-button {
   position: absolute;
   top: 25px;
-  right: 25px;
+  right: 100px;
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
@@ -74,4 +74,109 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: white;
+  width: 50%;
+  margin: 50px auto;
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+form input {
+  padding: 8px 10px;
+  font-size: 1.1rem;
+  outline: none;
+  margin-bottom: 25px;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 8px 0;
+  border: none;
+  background-color: green;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.stat {
+  width: auto;
+  padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.errors {
+  background-color: #ffcccc;
+  color: #990000;
+  border: 2px solid #990000;
+}
+
+.message {
+  background-color: #cdffcd;
+  color: green;
+  border: 2px solid green;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightpink;
+  user-select: none;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: lightcoral;
+  color: white;
+}
+
+.edit {
+  position: absolute;
+  top: 25px;
+  right: 165px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightblue;
+  user-select: none;
+  cursor: pointer;
+}
+
+.edit:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.add-movie-button {
+  padding: 8px 12px;
+  border: none;
+  background-color: green;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+  position: relative;
+  left: calc(50% - 75px);
+}
+
+form h4 {
+  margin-top: 0;
 }
